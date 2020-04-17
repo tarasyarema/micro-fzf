@@ -1,4 +1,4 @@
-VERSION = "1.1.0"
+VERSION = "1.0.0"
 
 local micro = import("micro")
 local shell = import("micro/shell")
@@ -54,4 +54,6 @@ function init()
     config.MakeCommand("fv", function(bp, args)
 		fzf(bp, 2)
     end, config.NoComplete)
+    
+    config.AddRuntimeFile("fzf", config.RTHelp, "help/fzf.md")
 end
