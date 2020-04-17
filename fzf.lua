@@ -6,19 +6,12 @@ local config = import("micro/config")
 local buffer = import("micro/buffer")
 
 function fzf(bp, opt)
-    if shell.TermEmuSupported then
-        local err = shell.RunTermEmulator(bp, "fzf", false, true, fzfOpen, bp, opt)
-        if err ~= nil then
-            micro.InfoBar():Error(err)
-        end
-    else
-        local output, err = shell.RunInteractiveShell("fzf", false, true)
-        if err ~= nil then
-            micro.InfoBar():Error(err)
-        else
-            fzfOpen(output, bp, opt)
-        end
-    end
+	local output, err = shell.RunInteractiveShell("fzf", false, true)
+	if err ~= nil then
+	    micro.InfoBar():Error(err)
+	else
+	    fzfOpen(output, bp, opt)
+	end
 end
 
 function fzfOpen(output, bp, opt)
