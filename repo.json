@@ -1,0 +1,18 @@
+[
+	{
+		"Name": "Micro fzf",
+		"Description": "Use fzf to open files in the current directory.",
+        "Website": "https://github.com/tarasyarema/micro-fzf",
+		"Tags": ["fzf"],
+		"Versions": [
+            {
+                "Version": "1.0.0",
+                "Url": "https://github.com/tarasyarema/micro-fzf",
+                "Require": {
+                    "micro": ">=2.0.3"
+                }
+            },
+		]
+	}
+]
+
